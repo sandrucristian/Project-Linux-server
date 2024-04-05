@@ -70,6 +70,12 @@ In the first part I will show the ubuntu server with all the services mentioned 
 
 ![p2.png](assets/p2.png)
 
+````
+nslookup dns-cristan.com
+````
+
+![p13.png](assets/p13.png)
+
 **HTTP**
 
 ![p3.png](assets/p3.png)
