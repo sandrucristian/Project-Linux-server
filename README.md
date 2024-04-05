@@ -122,6 +122,19 @@ manual IP setup
 
 ![p12.png](assets/p12.png)
 
+References for:
+
+[Domain Name Service DNS](https://ubuntu.com/server/docs/service-domain-name-service-dns)
+
+[How to install and configure isc-dhcp-server](https://ubuntu.com/server/docs/how-to-install-and-configure-isc-dhcp-server)
+
+[to Install GLPI video](https://www.youtube.com/watch?v=AF5pJaQJXvU)
+
+[to Install GLPI](https://totatca.com/how-to-install-glpi-on-ubuntu/)
+
+
+
+
 server ubuntu 23 updatat and upgradat
 
 sudo usermod -aG sudo cristian
