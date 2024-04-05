@@ -64,19 +64,19 @@ In the first part I will show the ubuntu server with all the services mentioned 
 
 **DHCP**
 
-![p1.png](p1.png)
+![p1.png](assets/p1.png)
 
 **DNS**
 
-![p2.png](p2.png)
+![p2.png](assets/p2.png)
 
 **HTTP**
 
-![p3.png](p3.png)
+![p3.png](assets/p3.png)
 
 **mariadb (internal website running GLPI)**
 
-![p4.png](p4.png)
+![p4.png](assets/p4.png)
 
 
 ### ubuntu Workstation running a desktop environment
@@ -85,26 +85,26 @@ In the first part I will show the ubuntu server with all the services mentioned 
 
 LibreOffice
 
-![p5.png](p5.png)
+![p5.png](assets/p5.png)
 
 Gimp
 
-![p6.png](p6.png)
+![p6.png](assets/p6.png)
 
 **Mullvad browser** with **GLPI**
 
-![p7.png](p7.png)
+![p7.png](assets/p7.png)
 
 The /home folder is located on a separate partition, same disk.
 
-![p8.png](p8.png)
+![p8.png](assets/p8.png)
 
 
 ## Part 2.
 
 ### Server setup:
 
-server ubuntu 23 updatat si upgradat
+server ubuntu 23 updatat and upgradat
 
 sudo usermod -aG sudo cristian
 
