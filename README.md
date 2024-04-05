@@ -50,7 +50,7 @@ In the virtual computer I created a Linux server using the ISO:
 
 And the second virtual computer using the ISO:
 
-	**ubuntu-23.10-live-server-amd64.iso**
+	ubuntu-23.10.1-desktop-amd64.iso
 
 These ISOs were downloaded from [ubuntu.com](https://ubuntu.com/download)
 
@@ -102,7 +102,25 @@ The /home folder is located on a separate partition, same disk.
 
 ## Part 2.
 
+
+
+Ubuntu Desktop username setup
+
+![p9.png](assets/p9.png)
+
+auto IP from DHCP server
+
+![p10.png](assets/p10.png)
+
+![p11.png](assets/p11.png)
+
+
+
 ### Server setup:
+
+manual IP setup
+
+![p12.png](assets/p12.png)
 
 server ubuntu 23 updatat and upgradat
 
