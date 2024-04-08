@@ -295,7 +295,7 @@ sudo systemctl restart bind9.service
 
 
 
-#config DHCP
+## Setup DHCP (Dynamic Host Configuration Protocol)
 
 ````
 sudo apt install isc-dhcp-server
