@@ -2,9 +2,7 @@
 
 - Repository: `linux_client_server`
 - Type of Challenge: `Consolidation`
-- Duration: `3 day`
-- Deadline: `04/04/2024`
-- Participants: : `solo`
+- Participant: : `Sandru Cristian`
 
 # Linux network services
 
@@ -151,35 +149,35 @@ References for:
 
 server ubuntu 23 updatet and upgraded
 
-cristian simply doctor note config
+````
+sudo apt update -y && sudo apt -y upgrade
+````
 
+cristian user with root privileges
+
+````
 sudo usermod -aG sudo cristian
+````
+For DNS name services we use the bind9 program.
 
+[bind9 documentation](https://bind9.net/)
+
+````
 sudo apt install bind9
+````
 
+````
 sudo apt install dnsutils
-
-The authenticity of host '192.168.254.5 (192.168.254.5)' can't be established.
-ECDSA key fingerprint is SHA256:/krY1aiSUJotg+CfaCFCu0JQduu5ASdJNVegj4xaIFk.
-
-
+````
+modify the configuration in the **named.conf.options** file
+````
 cd /etc/bind/
+````
 
-"
-
-sudo nano named.conf
-
-named.conf.options
-
-
-forwarders {
-    8.8.8.8;
-   
-};
-
-"
-
-salvat fila "
+````
+sudo nano named.conf.options
+````
+````
 options {
         directory "/var/cache/bind";
 
@@ -204,36 +202,40 @@ options {
         dnssec-validation auto;
 
         listen-on-v6 { any; };
-//};
-//forwarders {
+````
+after modifying this file, restart the service
 
-"
-
+````
 sudo systemctl restart bind9.service
+````
 
 Primary Server
 
 dns-cristian.com
 
-cd /etc/bind
-
-
-sudo nano named.conf.local
-
+modify the configuration in the **named.conf.local** file
 /etc/bind/named.conf.local:
+````
+cd /etc/bind
+````
+````
+sudo nano named.conf.local
+````
 
-
+````
 zone "dns-cristian.com" {
     type master;
     file "/etc/bind/db.dns-cristian.com";
 };
-
-
+````
+````
 sudo cp /etc/bind/db.local /etc/bind/db.dns-cristian.com
-
+````
+````
 sudo nano db.dns-cristian.com
+````
 
-
+````
 ;
 ; BIND data file for dns-cristian.com
 ;
@@ -249,23 +251,30 @@ $TTL    604800
 @       IN      A       192.168.254.5
 @       IN      AAAA    ::1
 ns      IN      A       192.168.254.5
-
+````
+````
 sudo systemctl restart bind9.service
+````
 
+````
 sudo nano named.conf.local
+````
 
-add
-
+add a new line
+````
 zone "254.168.192.in-addr.arpa" {
     type master;
     file "/etc/bind/db.192";
 };
+````
 
-
+````
 sudo cp /etc/bind/db.127 /etc/bind/db.192
-
+````
+````
 sudo nano db.192
-
+````
+````
 ;
 ; BIND reverse data file for local 192.168.254.XXX net
 ;
@@ -279,23 +288,25 @@ $TTL    604800
 ;
 @       IN      NS      ns.
 10      IN      PTR     ns.dns-cristian.com.
-
+````
+````
 sudo systemctl restart bind9.service
-
-dig -x 127.0.0.0
-
-ok !!!!
+````
 
 
-config dhcp
 
+#config DHCP
+
+````
 sudo apt install isc-dhcp-server
-
+````
+````
 cd /etc/dhcp
-
+````
+````
 sudo nano dhcpd.conf
-
-
+````
+````
 # minimal sample /etc/dhcp/dhcpd.conf
 default-lease-time 600;
 max-lease-time 7200;
@@ -306,15 +317,20 @@ subnet 192.168.254.0 netmask 255.255.255.0 {
  option domain-name-servers 192.168.254.5, 8.8.8.8;
  option domain-name "dns-cristian.com";
 }
-
+````
+````
 cd /etc/default/
-
+````
+````
 sudo nano isc-dhcp-server
+````
 
+````
 INTERFACESv4="ens33"
-
+````
+````
 sudo systemctl restart isc-dhcp-server.service
-
+````
 ![meme-honest-work](assets/meme-honest-work.png)
 
 
