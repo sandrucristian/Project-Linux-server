@@ -62,6 +62,14 @@ In the first part I will show the ubuntu server with all the services mentioned 
 
 ### Server running:
 
+SSH server : enable
+
+NETWORK : 192.168.254.0/24
+
+IP :      192.168.254.5
+
+DOMAIN NAME: dns-cristian.com
+
 **DHCP**
 
 ![p1.png](assets/p1.png)
@@ -141,7 +149,9 @@ References for:
 
 
 
-server ubuntu 23 updatat and upgradat
+server ubuntu 23 updatet and upgraded
+
+cristian simply doctor note config
 
 sudo usermod -aG sudo cristian
 
@@ -304,6 +314,8 @@ sudo nano isc-dhcp-server
 INTERFACESv4="ens33"
 
 sudo systemctl restart isc-dhcp-server.service
+
+![meme-honest-work](assets/meme-honest-work.png)
 
 
 
